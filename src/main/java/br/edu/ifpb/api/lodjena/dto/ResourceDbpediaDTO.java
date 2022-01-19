@@ -1,5 +1,7 @@
 package br.edu.ifpb.api.lodjena.dto;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -11,24 +13,19 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 
 @Schema(name = "Resource")
-public class ResourceDTO {
+public class ResourceDbpediaDTO {
+	
+	@JsonProperty(value = "titulo")
 	private String label;
 	
-	@JsonProperty(value = "abstract")
+	@JsonProperty(value = "descricao")
 	private String abstractText;
 	
+	@JsonProperty(value = "uri")
 	private String uri;
 	
-	public ResourceDTO() {
-		
-	}
-
-	public ResourceDTO(String label, String abstractText, String uri) {
-		super();
-		this.label = label;
-		this.abstractText = abstractText;
-		this.uri = uri;
-	}
+	@JsonProperty(value = "propriedades")
+	private List<ResourceDbpediaPropertiesDTO> properties;
 
 	public String getLabel() {
 		return label;
@@ -53,4 +50,14 @@ public class ResourceDTO {
 	public void setUri(String uri) {
 		this.uri = uri;
 	}
+
+	public List<ResourceDbpediaPropertiesDTO> getProperties() {
+		return properties;
+	}
+
+	public void setProperties(List<ResourceDbpediaPropertiesDTO> properties) {
+		this.properties = properties;
+	}
+	
+	
 }

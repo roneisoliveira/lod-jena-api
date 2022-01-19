@@ -6,6 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
+/**
+ * 
+ * @author Ronei Oliveira
+ *
+ */
 @SpringBootApplication
 @OpenAPIDefinition(info = @Info(title = "Linked Open Data API", version = "0.0.1", description = "Linked Open Data from Apache Jena"))
 public class LodJenaApplication {

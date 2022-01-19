@@ -1,25 +1,31 @@
 package br.edu.ifpb.api.lodjena.model;
 
+import java.util.List;
+
 /**
  * 
- * @author ronei
+ * @author Ronei Oliveira
  *
  */
 
-public class Resource {
+public class ResourceDbpedia {
 	private String label;
 	private String abstractText;
 	private String uri;
 	
-	public Resource() {
-		
+	private List<ResourceDbpediaPropertie> properties;
+
+	public ResourceDbpedia() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Resource(String label, String abstractText, String uri) {
+	public ResourceDbpedia(String label, String abstractText, String uri, List<ResourceDbpediaPropertie> properties) {
 		super();
 		this.label = label;
 		this.abstractText = abstractText;
 		this.uri = uri;
+		this.properties = properties;
 	}
 
 	public String getLabel() {
@@ -37,7 +43,7 @@ public class Resource {
 	public void setAbstractText(String abstractText) {
 		this.abstractText = abstractText;
 	}
-	
+
 	public String getUri() {
 		return uri;
 	}
@@ -46,8 +52,11 @@ public class Resource {
 		this.uri = uri;
 	}
 
-	@Override
-	public String toString() {
-		return "Resource [label=" + label + ", abstractText=" + abstractText + ", uri=" + uri + "]";
+	public List<ResourceDbpediaPropertie> getProperties() {
+		return properties;
+	}
+
+	public void setProperties(List<ResourceDbpediaPropertie> properties) {
+		this.properties = properties;
 	}
 }
